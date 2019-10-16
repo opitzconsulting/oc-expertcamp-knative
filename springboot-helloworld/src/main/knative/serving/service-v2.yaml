@@ -1,0 +1,22 @@
+apiVersion: serving.knative.dev/v1alpha1
+kind: Service
+metadata:
+  name: helloworld
+  namespace: ocexpertcamp
+spec:
+  template:
+    metadata:
+      name: helloworld-v2
+      annotations:
+        # disable istio-proxy injection
+        sidecar.istio.io/inject: "false"  
+    spec:
+      containers:
+      - image: docker.io/{username}/helloworld:v1
+        livenessProbe:
+          httpGet:
+            path: /healthz
+        readinessProbe:
+          httpGet:
+            path: /healthz
+   
