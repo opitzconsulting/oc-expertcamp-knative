@@ -12,7 +12,7 @@ spec:
         sidecar.istio.io/inject: "false"  
     spec:
       containers:
-      - image: docker.io/{username}/helloworld:v1
+      - image: docker.io/fliegera/helloworld:v1
         livenessProbe:
           httpGet:
             path: /healthz
