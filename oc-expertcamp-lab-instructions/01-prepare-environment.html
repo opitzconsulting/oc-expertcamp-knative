@@ -447,7 +447,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#checkout-the-code">Checkout the Code</a></li>
 <li><a href="#prepare-your-shell-environment">Prepare your shell environment</a></li>
 <li><a href="#login-into-openshift">Login into OpenShift</a></li>
-<li><a href="#create-change-to-openshift-workshop-project">Create / Change to OpenShift Workshop Project</a></li>
+<li><a href="#create-the-workshop-project">Create the Workshop Project</a></li>
+<li><a href="#change-to-your-project">Change to your project</a></li>
 </ul>
 </li>
 </ul>
@@ -508,7 +509,7 @@ oc login --insecure-skip-tls-verify=true -u %WORKSHOP_USER% -p %WORKSHOP_PWD% <a
 </div>
 </div>
 <div class="sect2">
-<h3 id="create-change-to-openshift-workshop-project"><a class="anchor" href="#create-change-to-openshift-workshop-project"></a>Create / Change to OpenShift Workshop Project</h3>
+<h3 id="create-the-workshop-project"><a class="anchor" href="#create-the-workshop-project"></a>Create the Workshop Project</h3>
 <div id="knative-oc-project" class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="bash">oc new-project knative{number}</code></pre>
@@ -526,6 +527,45 @@ Do not use a project name different than the given notation.
 </tr>
 </table>
 </div>
+<div id="watch-copy-operators" class="paragraph">
+<p>Open the <a href="https://console-openshift-console.apps.meetup.openshift.opitz.cloud">WebConsole</a> and logon with your credentials.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Navigate to the Section <strong>Operators &#8594; Installed Operators</strong>.</p>
+</li>
+<li>
+<p>Make sure that you selected your project.</p>
+</li>
+<li>
+<p>Watch what is happening.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>You should see the operators being copied into your project.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/InstalledOperators.png" alt="InstalledOperators">
+</div>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Do not continue the lab before you have a result like shown in the image.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="change-to-your-project"><a class="anchor" href="#change-to-your-project"></a>Change to your project</h3>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="bash">oc project knative{number}</code></pre>
@@ -551,7 +591,7 @@ Do not use a project name different than the given notation.
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-11-06 20:06:32 +0100
+Last updated 2019-11-06 20:57:59 +0100
 </div>
 </div>
 <style>
