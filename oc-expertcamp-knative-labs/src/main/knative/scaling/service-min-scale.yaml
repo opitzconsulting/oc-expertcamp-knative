@@ -15,7 +15,7 @@ spec:
         autoscaling.knative.dev/target: "10"
     spec:
       containers:
-      - image: quay.io/rhdevelopers/knative-tutorial-greeter:quarkus
+      - image: image-registry.openshift-image-registry.svc:5000/knative01/meetup-greeting:1
         livenessProbe:
           httpGet:
             path: /healthz

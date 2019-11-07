@@ -12,7 +12,7 @@ spec:
     spec:
       containers:
       #- image: docker.io/fliegera/helloworld:v1
-      - image: quay.io/rhdevelopers/knative-tutorial-greeter:quarkus
+      - image: image-registry.openshift-image-registry.svc:5000/knative01/meetup-greeting:1
         env:
         - name: MESSAGE_PREFIX
           value: Namaste
