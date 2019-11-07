@@ -442,6 +442,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
+<li><a href="#change-to-openshift-workshop-project">Change to OpenShift Workshop Project</a></li>
 <li><a href="#eventing-source">Event Source</a>
 <ul class="sectlevel2">
 <li><a href="#eventing-create-event-source">Create Event Source</a></li>
@@ -462,6 +463,82 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sectionbody">
 <div id="Overview" class="paragraph">
 <p><a href="README.html">Overview</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="change-to-openshift-workshop-project"><a class="anchor" href="#change-to-openshift-workshop-project"></a>Change to OpenShift Workshop Project</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The following checks ensure that each chapter exercises are done with the right environment settings.</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="openblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">OpenShift</dt>
+</dl>
+</div>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>OpenShift CLI should be v4.2</p>
+</li>
+</ul>
+</div>
+<div id="oc-version" class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">oc version</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The output should be like</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">Client Version: v4.2.2
+Kubernetes Version: v1.14.6+2e5ed54</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Make sure to be on <code>knative{number}</code> OpenShift project</p>
+</li>
+</ul>
+</div>
+<div id="right-openshift-project" class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">oc project -q</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you are not on <code>knative{number}</code> project, then run following command to change to <code>knative{number}</code> project:</p>
+</div>
+<div id="change-to-openshift-project" class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">oc project knative{number}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The {number} has to be replaced by the number assigned to you.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -654,7 +731,7 @@ oc --namespace knative{number}  get services.serving.knative.dev event-helloworl
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-11-07 15:02:32 +0100
+Last updated 2019-11-07 15:25:53 +0100
 </div>
 </div>
 <style>
