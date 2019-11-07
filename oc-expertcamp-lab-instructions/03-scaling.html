@@ -636,7 +636,7 @@ It should work the same way like in the previous excercise.
         <span class="key">autoscaling.knative.dev/target</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">10</span><span class="delimiter">&quot;</span></span>
     <span class="key">spec</span>:
       <span class="key">containers</span>:
-      - <span class="string"><span class="content">image: image-registry.openshift-image-registry.svc:5000/knative01/meetup-greeting:1</span></span>
+      - <span class="string"><span class="content">image: quay.io/rhdevelopers/knative-tutorial-greeter:quarkus</span></span>
         <span class="key">livenessProbe</span>:
           <span class="key">httpGet</span>:
             <span class="key">path</span>: <span class="string"><span class="content">/healthz</span></span>
@@ -777,7 +777,7 @@ Remember how you did it in the Serving.
         <span class="key">autoscaling.knative.dev/target</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">10</span><span class="delimiter">&quot;</span></span>
     <span class="key">spec</span>:
       <span class="key">containers</span>:
-      - <span class="string"><span class="content">image: image-registry.openshift-image-registry.svc:5000/knative01/meetup-greeting:1</span></span>
+      - <span class="string"><span class="content">image: quay.io/rhdevelopers/knative-tutorial-greeter:quarkus</span></span>
         <span class="key">livenessProbe</span>:
           <span class="key">httpGet</span>:
             <span class="key">path</span>: <span class="string"><span class="content">/healthz</span></span>

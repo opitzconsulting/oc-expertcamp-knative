@@ -595,7 +595,7 @@ cd %TUTORIAL_HOME%/src/main/knative/serving</code></pre>
         <span class="key">sidecar.istio.io/inject</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">false</span><span class="delimiter">&quot;</span></span>
     <span class="key">spec</span>:
       <span class="key">containers</span>:
-      - <span class="string"><span class="content">image: image-registry.openshift-image-registry.svc:5000/knative01/meetup-greeting:1</span></span>
+      - <span class="string"><span class="content">image: quay.io/rhdevelopers/knative-tutorial-greeter:quarkus</span></span>
         <span class="key">livenessProbe</span>:
           <span class="key">httpGet</span>:
             <span class="key">path</span>: <span class="string"><span class="content">/healthz</span></span>
@@ -753,7 +753,7 @@ cd %TUTORIAL_HOME%/src/main/knative/serving</code></pre>
     <span class="key">spec</span>:
       <span class="key">containers</span>:
       <span class="comment">#- image: docker.io/fliegera/helloworld:v1</span>
-      - <span class="string"><span class="content">image: image-registry.openshift-image-registry.svc:5000/knative01/meetup-greeting:1</span></span>
+      - <span class="string"><span class="content">image: quay.io/rhdevelopers/knative-tutorial-greeter:quarkus</span></span>
         <span class="key">env</span>:
         - <span class="string"><span class="content">name: MESSAGE_PREFIX</span></span>
           <span class="key">value</span>: <span class="string"><span class="content">Namaste</span></span>
@@ -862,6 +862,7 @@ cd %TUTORIAL_HOME%/src/main/knative/serving</code></pre>
 32
 33
 34
+35
 </pre></td>
   <td class="code"><pre><span class="key">apiVersion</span>: <span class="string"><span class="content">serving.knative.dev/v1alpha1</span></span>
 <span class="key">kind</span>: <span class="string"><span class="content">Service</span></span>
@@ -877,7 +878,8 @@ cd %TUTORIAL_HOME%/src/main/knative/serving</code></pre>
     <span class="key">spec</span>:
       <span class="key">containers</span>:
       <span class="comment">#- image: docker.io/fliegera/helloworld:v1</span>
-      - <span class="string"><span class="content">image: image-registry.openshift-image-registry.svc:5000/knative01/meetup-greeting:1</span></span>
+      <span class="comment">#- image: image-registry.openshift-image-registry.svc:5000/knative01/meetup-greeting:1</span>
+      - <span class="string"><span class="content">image: quay.io/rhdevelopers/knative-tutorial-greeter:quarkus</span></span>
         <span class="key">env</span>:
         - <span class="string"><span class="content">name: MESSAGE_PREFIX</span></span>
           <span class="key">value</span>: <span class="string"><span class="content">Namaste</span></span>
