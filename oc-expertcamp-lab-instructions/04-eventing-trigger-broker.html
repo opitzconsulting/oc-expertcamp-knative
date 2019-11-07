@@ -553,11 +553,11 @@ default-broker-ingress-59b9b4985c-8n6d4   2/2       Running   1          2m43s</
 <pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">apiVersion</span>: <span class="string"><span class="content">serving.knative.dev/v1alpha1</span></span>
 <span class="key">kind</span>: <span class="string"><span class="content">Service</span></span>
 <span class="key">metadata</span>:
-  <span class="key">name</span>: <span class="string"><span class="content">event-greeter</span></span>
+  <span class="key">name</span>: <span class="string"><span class="content">event-helloworld</span></span>
 <span class="key">spec</span>:
   <span class="key">template</span>:
     <span class="key">metadata</span>:
-      <span class="key">name</span>: <span class="string"><span class="content">event-greeter-v1</span></span>
+      <span class="key">name</span>: <span class="string"><span class="content">event-helloworld-v1</span></span>
       <span class="key">annotations</span>:
         <span class="comment"># disable istio-proxy injection</span>
         <span class="key">sidecar.istio.io/inject</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">false</span><span class="delimiter">&quot;</span></span>

@@ -587,11 +587,11 @@ cronjob-event-greeter-cronjob-source-4v9vq-6bff96b58f-tgrhj   2/2       Running 
 <pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">apiVersion</span>: <span class="string"><span class="content">serving.knative.dev/v1alpha1</span></span>
 <span class="key">kind</span>: <span class="string"><span class="content">Service</span></span>
 <span class="key">metadata</span>:
-  <span class="key">name</span>: <span class="string"><span class="content">event-greeter</span></span>
+  <span class="key">name</span>: <span class="string"><span class="content">event-helloworld</span></span>
 <span class="key">spec</span>:
   <span class="key">template</span>:
     <span class="key">metadata</span>:
-      <span class="key">name</span>: <span class="string"><span class="content">event-greeter-v1</span></span>
+      <span class="key">name</span>: <span class="string"><span class="content">event-helloworld-v1</span></span>
       <span class="key">annotations</span>:
         <span class="comment"># disable istio-proxy injection</span>
         <span class="key">sidecar.istio.io/inject</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">false</span><span class="delimiter">&quot;</span></span>
@@ -616,9 +616,6 @@ cronjob-event-greeter-cronjob-source-4v9vq-6bff96b58f-tgrhj   2/2       Running 
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="bash">oc -n knative{number}  apply -f service.yaml</code></pre>
 </div>
-</div>
-<div class="paragraph">
-<p>You can <a href="src/main/knative/eventing/eventing.html#eventing-watch-logs">watch logs</a> to see the cron job source sending an event every 1 minute.</p>
 </div>
 </div>
 <div class="sect2">
@@ -646,7 +643,7 @@ oc --namespace knative{number}  get services.serving.knative.dev event-helloworl
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-11-07 10:33:12 +0100
+Last updated 2019-11-07 11:39:41 +0100
 </div>
 </div>
 <style>

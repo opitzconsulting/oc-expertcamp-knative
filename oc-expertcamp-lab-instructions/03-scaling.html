@@ -617,11 +617,11 @@ It should work the same way like in the previous excercise.
 <pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">apiVersion</span>: <span class="string"><span class="content">serving.knative.dev/v1alpha1</span></span>
 <span class="key">kind</span>: <span class="string"><span class="content">Service</span></span>
 <span class="key">metadata</span>:
-  <span class="key">name</span>: <span class="string"><span class="content">prime-generator</span></span>
+  <span class="key">name</span>: <span class="string"><span class="content">helloworld</span></span>
 <span class="key">spec</span>:
   <span class="key">template</span>:
     <span class="key">metadata</span>:
-      <span class="key">name</span>: <span class="string"><span class="content">prime-generator-v1</span></span>
+      <span class="key">name</span>: <span class="string"><span class="content">helloworld-v3</span></span>
       <span class="key">annotations</span>:
         <span class="comment"># disable istio-proxy injection</span>
         <span class="key">sidecar.istio.io/inject</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">false</span><span class="delimiter">&quot;</span></span>
@@ -629,7 +629,7 @@ It should work the same way like in the previous excercise.
         <span class="key">autoscaling.knative.dev/target</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">10</span><span class="delimiter">&quot;</span></span>
     <span class="key">spec</span>:
       <span class="key">containers</span>:
-      - <span class="string"><span class="content">image: quay.io/rhdevelopers/prime-generator:v27-quarkus</span></span>
+      - <span class="string"><span class="content">image: quay.io/rhdevelopers/knative-tutorial-greeter:quarkus</span></span>
         <span class="key">livenessProbe</span>:
           <span class="key">httpGet</span>:
             <span class="key">path</span>: <span class="string"><span class="content">/healthz</span></span>
@@ -756,11 +756,11 @@ Remember how you did it in the Serving.
 <pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">apiVersion</span>: <span class="string"><span class="content">serving.knative.dev/v1alpha1</span></span>
 <span class="key">kind</span>: <span class="string"><span class="content">Service</span></span>
 <span class="key">metadata</span>:
-  <span class="key">name</span>: <span class="string"><span class="content">prime-generator</span></span>
+  <span class="key">name</span>: <span class="string"><span class="content">helloworld</span></span>
 <span class="key">spec</span>:
   <span class="key">template</span>:
     <span class="key">metadata</span>:
-      <span class="key">name</span>: <span class="string"><span class="content">prime-generator-v2</span></span>
+      <span class="key">name</span>: <span class="string"><span class="content">helloworld-v4</span></span>
       <span class="key">annotations</span>:
         <span class="comment"># disable istio-proxy injection</span>
         <span class="key">sidecar.istio.io/inject</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">false</span><span class="delimiter">&quot;</span></span>
@@ -770,7 +770,7 @@ Remember how you did it in the Serving.
         <span class="key">autoscaling.knative.dev/target</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">10</span><span class="delimiter">&quot;</span></span>
     <span class="key">spec</span>:
       <span class="key">containers</span>:
-      - <span class="string"><span class="content">image: quay.io/rhdevelopers/prime-generator:v27-quarkus</span></span>
+      - <span class="string"><span class="content">image: quay.io/rhdevelopers/knative-tutorial-greeter:quarkus</span></span>
         <span class="key">livenessProbe</span>:
           <span class="key">httpGet</span>:
             <span class="key">path</span>: <span class="string"><span class="content">/healthz</span></span>

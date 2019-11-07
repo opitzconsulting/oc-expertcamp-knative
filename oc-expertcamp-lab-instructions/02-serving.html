@@ -588,7 +588,7 @@ cd %TUTORIAL_HOME%/src/main/knative/serving</code></pre>
         <span class="key">sidecar.istio.io/inject</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">false</span><span class="delimiter">&quot;</span></span>
     <span class="key">spec</span>:
       <span class="key">containers</span>:
-      - <span class="string"><span class="content">image: docker.io/fliegera/helloworld:v1</span></span>
+      - <span class="string"><span class="content">image: quay.io/rhdevelopers/knative-tutorial-greeter:quarkus</span></span>
         <span class="key">livenessProbe</span>:
           <span class="key">httpGet</span>:
             <span class="key">path</span>: <span class="string"><span class="content">/healthz</span></span>
@@ -692,9 +692,7 @@ cd %TUTORIAL_HOME%/src/main/knative/serving</code></pre>
 <h3 id="rev1-basics-show-knative-revisions"><a class="anchor" href="#rev1-basics-show-knative-revisions"></a>revisions</h3>
 <div id="rev1-oc-knative-revisions" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="bash">oc --namespace knative{number} get rev \
- --selector=serving.knative.dev/service=helloworld \
- --sort-by=&quot;{.metadata.creationTimestamp}&quot;</code></pre>
+<pre class="CodeRay highlight"><code data-lang="bash">oc --namespace knative{number} get rev --selector=serving.knative.dev/service=helloworld --sort-by=&quot;{.metadata.creationTimestamp}&quot;</code></pre>
 </div>
 </div>
 <div class="admonitionblock tip">
@@ -738,7 +736,6 @@ cd %TUTORIAL_HOME%/src/main/knative/serving</code></pre>
 <span class="key">kind</span>: <span class="string"><span class="content">Service</span></span>
 <span class="key">metadata</span>:
   <span class="key">name</span>: <span class="string"><span class="content">helloworld</span></span>
-  <span class="key">namespace</span>: <span class="string"><span class="content">ocexpertcamp</span></span>
 <span class="key">spec</span>:
   <span class="key">template</span>:
     <span class="key">metadata</span>:
@@ -748,7 +745,8 @@ cd %TUTORIAL_HOME%/src/main/knative/serving</code></pre>
         <span class="key">sidecar.istio.io/inject</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">false</span><span class="delimiter">&quot;</span></span>
     <span class="key">spec</span>:
       <span class="key">containers</span>:
-      - <span class="string"><span class="content">image: docker.io/fliegera/helloworld:v1</span></span>
+      <span class="comment">#- image: docker.io/fliegera/helloworld:v1</span>
+      - <span class="string"><span class="content">image: quay.io/rhdevelopers/knative-tutorial-greeter:quarkus</span></span>
         <span class="key">env</span>:
         - <span class="string"><span class="content">name: MESSAGE_PREFIX</span></span>
           <span class="key">value</span>: <span class="string"><span class="content">Namaste</span></span>
@@ -783,9 +781,7 @@ cd %TUTORIAL_HOME%/src/main/knative/serving</code></pre>
 <h3 id="rev2-basics-show-knative-revisions"><a class="anchor" href="#rev2-basics-show-knative-revisions"></a>revisions</h3>
 <div id="rev2-oc-knative-revisions" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="bash">oc --namespace knative{number} get rev \
- --selector=serving.knative.dev/service=helloworld \
- --sort-by=&quot;{.metadata.creationTimestamp}&quot;</code></pre>
+<pre class="CodeRay highlight"><code data-lang="bash">oc --namespace knative{number} get rev --selector=serving.knative.dev/service=helloworld --sort-by=&quot;{.metadata.creationTimestamp}&quot;</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -864,7 +860,6 @@ cd %TUTORIAL_HOME%/src/main/knative/serving</code></pre>
 <span class="key">kind</span>: <span class="string"><span class="content">Service</span></span>
 <span class="key">metadata</span>:
   <span class="key">name</span>: <span class="string"><span class="content">helloworld</span></span>
-  <span class="key">namespace</span>: <span class="string"><span class="content">ocexpertcamp</span></span>
 <span class="key">spec</span>:
   <span class="key">template</span>:
     <span class="key">metadata</span>:
@@ -874,7 +869,8 @@ cd %TUTORIAL_HOME%/src/main/knative/serving</code></pre>
         <span class="key">sidecar.istio.io/inject</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">false</span><span class="delimiter">&quot;</span></span>
     <span class="key">spec</span>:
       <span class="key">containers</span>:
-      - <span class="string"><span class="content">image: docker.io/fliegera/helloworld:v1</span></span>
+      <span class="comment">#- image: docker.io/fliegera/helloworld:v1</span>
+      - <span class="string"><span class="content">image: quay.io/rhdevelopers/knative-tutorial-greeter:quarkus</span></span>
         <span class="key">env</span>:
         - <span class="string"><span class="content">name: MESSAGE_PREFIX</span></span>
           <span class="key">value</span>: <span class="string"><span class="content">Namaste</span></span>

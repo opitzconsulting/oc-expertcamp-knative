@@ -674,17 +674,17 @@ cronjob-event-greeter-cronjob-source-4v9vq-6bff96b58f-tgrhj   2/2       Running 
 <pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">apiVersion</span>: <span class="string"><span class="content">eventing.knative.dev/v1alpha1</span></span>
 <span class="key">kind</span>: <span class="string"><span class="content">Subscription</span></span>
 <span class="key">metadata</span>:
-  <span class="key">name</span>: <span class="string"><span class="content">event-greeter-subscriber</span></span>
+  <span class="key">name</span>: <span class="string"><span class="content">event-helloworld-subscriber</span></span>
 <span class="key">spec</span>:
   <span class="key">channel</span>:
     <span class="key">apiVersion</span>: <span class="string"><span class="content">eventing.knative.dev/v1alpha1</span></span>
     <span class="key">kind</span>: <span class="string"><span class="content">Channel</span></span>
-    <span class="key">name</span>: <span class="string"><span class="content">ch-event-greeter</span></span>
+    <span class="key">name</span>: <span class="string"><span class="content">ch-event-helloworld</span></span>
   <span class="key">subscriber</span>:
     <span class="key">ref</span>:
       <span class="key">apiVersion</span>: <span class="string"><span class="content">serving.knative.dev/v1alpha1</span></span>
       <span class="key">kind</span>: <span class="string"><span class="content">Service</span></span>
-      <span class="key">name</span>: <span class="string"><span class="content">event-greeter</span></span></code></pre>
+      <span class="key">name</span>: <span class="string"><span class="content">event-helloworld</span></span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -770,11 +770,11 @@ Add <code>-oyaml</code> to the above commands to get more details about each obj
 <pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">apiVersion</span>: <span class="string"><span class="content">serving.knative.dev/v1alpha1</span></span>
 <span class="key">kind</span>: <span class="string"><span class="content">Service</span></span>
 <span class="key">metadata</span>:
-  <span class="key">name</span>: <span class="string"><span class="content">event-greeter</span></span>
+  <span class="key">name</span>: <span class="string"><span class="content">event-helloworld</span></span>
 <span class="key">spec</span>:
   <span class="key">template</span>:
     <span class="key">metadata</span>:
-      <span class="key">name</span>: <span class="string"><span class="content">event-greeter-v1</span></span>
+      <span class="key">name</span>: <span class="string"><span class="content">event-helloworld-v1</span></span>
       <span class="key">annotations</span>:
         <span class="comment"># disable istio-proxy injection</span>
         <span class="key">sidecar.istio.io/inject</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">false</span><span class="delimiter">&quot;</span></span>
