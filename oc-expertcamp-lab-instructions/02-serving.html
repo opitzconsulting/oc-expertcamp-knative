@@ -443,7 +443,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
 <li><a href="#change-to-openshift-workshop-project">Change to OpenShift Workshop Project</a></li>
-<li><a href="#deploy-the-service">Deploy the Service</a></li>
+<li><a href="#serving-deploy-the-service">Deploy the Service</a></li>
 <li><a href="#basics-invoke-service">Invoke Service</a></li>
 <li><a href="#basics-see-what-you-have-deployed">See what you have deployed</a>
 <ul class="sectlevel2">
@@ -464,7 +464,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#service-pinned-to-first-revision">Service pinned to first revision</a></li>
 </ul>
 </li>
-<li><a href="#basics-cleanup">Cleanup</a></li>
 </ul>
 </div>
 </div>
@@ -546,7 +545,7 @@ Kubernetes Version: v1.14.6+2e5ed54</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="deploy-the-service"><a class="anchor" href="#deploy-the-service"></a>Deploy the Service</h2>
+<h2 id="serving-deploy-the-service"><a class="anchor" href="#serving-deploy-the-service"></a>Deploy the Service</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Navigate to the tutorial chapter&#8217;s <code>serving</code> folder:</p>
@@ -983,20 +982,10 @@ cd %TUTORIAL_HOME%/src/main/knative/serving</code></pre>
 </div>
 </div>
 </div>
-<div class="sect1">
-<h2 id="basics-cleanup"><a class="anchor" href="#basics-cleanup"></a>Cleanup</h2>
-<div class="sectionbody">
-<div id="basics-run-oc-cleanup" class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="bash">oc -n knative{number} delete services.serving.knative.dev helloworld</code></pre>
-</div>
-</div>
-</div>
-</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-11-06 18:02:20 +0100
+Last updated 2019-11-07 09:04:45 +0100
 </div>
 </div>
 <style>
