@@ -489,14 +489,14 @@ cd %TUTORIAL_HOME%/src/main/knative/eventing</code></pre>
 <pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">apiVersion</span>: <span class="string"><span class="content">sources.eventing.knative.dev/v1alpha1</span></span>
 <span class="key">kind</span>: <span class="string"><span class="content">CronJobSource </span></span><i class="conum" data-value="1"></i><b>(1)</b>
 <span class="key">metadata</span>:
-  <span class="key">name</span>: <span class="string"><span class="content">event-greeter-cronjob-source</span></span>
+  <span class="key">name</span>: <span class="string"><span class="content">event-helloworld-cronjob-source</span></span>
 <span class="key">spec</span>:
   <span class="key">schedule</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">* * * * *</span><span class="delimiter">&quot;</span></span>
   <span class="key">data</span>: <span class="string"><span class="content">'{&quot;message&quot;: &quot;Thanks for doing Knative Tutorial&quot;}'</span></span>
   <span class="key">sink</span>: <i class="conum" data-value="2"></i><b>(2)</b>
     <span class="key">apiVersion</span>: <span class="string"><span class="content">serving.knative.dev/v1alpha1</span></span>
     <span class="key">kind</span>: <span class="string"><span class="content">Service</span></span>
-    <span class="key">name</span>: <span class="string"><span class="content">event-greeter</span></span></code></pre>
+    <span class="key">name</span>: <span class="string"><span class="content">event-helloworld</span></span></code></pre>
 </div>
 </div>
 <div class="colist arabic">
@@ -547,7 +547,7 @@ spec.  In the above example it defines <strong>schedule</strong>(the cron expres
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="bash">NAME                       AGE
-event-greeter-cronjob-source  39s</code></pre>
+event-helloworld-cronjob-source  39s</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -564,7 +564,7 @@ event-greeter-cronjob-source  39s</code></pre>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="bash">NAME                                                          READY     STATUS    RESTARTS   AGE
-cronjob-event-greeter-cronjob-source-4v9vq-6bff96b58f-tgrhj   2/2       Running   0          6m</code></pre>
+cronjob-event-helloworld-cronjob-source-4v9vq-6bff96b58f-tgrhj   2/2       Running   0          6m</code></pre>
 </div>
 </div>
 </div>
@@ -643,7 +643,7 @@ oc --namespace knative{number}  get services.serving.knative.dev event-helloworl
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-11-07 11:39:41 +0100
+Last updated 2019-11-07 12:17:09 +0100
 </div>
 </div>
 <style>
