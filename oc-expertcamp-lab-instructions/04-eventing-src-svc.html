@@ -481,8 +481,10 @@ cd %TUTORIAL_HOME%/src/main/knative/eventing</code></pre>
 </div>
 <div class="sect2">
 <h3 id="eventing-create-event-source"><a class="anchor" href="#eventing-create-event-source"></a>Create Event Source</h3>
+<div class="paragraph">
+<p>event-source-svc.yaml</p>
+</div>
 <div class="listingblock">
-<div class="title"><a href="https://github.com/opitzconsulting/oc-expertcamp-knative.git/src/main/knative/eventing/knative/event-source-svc.yaml">event-source-svc.yaml</a></div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">apiVersion</span>: <span class="string"><span class="content">sources.eventing.knative.dev/v1alpha1</span></span>
 <span class="key">kind</span>: <span class="string"><span class="content">CronJobSource </span></span><i class="conum" data-value="1"></i><b>(1)</b>
@@ -520,9 +522,6 @@ cd %TUTORIAL_HOME%/src/main/knative/eventing</code></pre>
 <p>Event Source can define the attributes that it wishes to receive via the
 spec.  In the above example it defines <strong>schedule</strong>(the cron expression) and <strong>data</strong> that will be sent as part of the event.</p>
 </div>
-<div class="paragraph">
-<p>When you <a href="src/main/knative/eventing/eventing.html#eventing-watch-logs">watch logs</a>, you will notice this data being delivered to the service.</p>
-</div>
 </td>
 </tr>
 </table>
@@ -530,9 +529,9 @@ spec.  In the above example it defines <strong>schedule</strong>(the cron expres
 <div class="paragraph">
 <p>Run the following commands to create the event source resources:</p>
 </div>
-<div id="event-src-svc-oc-kn-resources-apply" class="listingblock">
+<div id="run-oc-vi-revision" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="bash">oc apply -n knative{number} -f <a href="https://github.com/opitzconsulting/oc-expertcamp-knative.git/src/main/knative/eventing/knative/event-source-svc.yaml">event-source-svc.yaml</a></code></pre>
+<pre class="CodeRay highlight"><code data-lang="bash">oc -n knative{number}  apply -f event-source-svc.yaml</code></pre>
 </div>
 </div>
 <div class="sect3">
@@ -580,8 +579,10 @@ cronjob-event-greeter-cronjob-source-4v9vq-6bff96b58f-tgrhj   2/2       Running 
 <div class="paragraph">
 <p>Run the following command to create the Knative service that will be used as the subscriber for the cron events:</p>
 </div>
+<div class="paragraph">
+<p>service.yaml</p>
+</div>
 <div class="listingblock">
-<div class="title"><a href="https://github.com/opitzconsulting/oc-expertcamp-knative.git/src/main/knative/eventing/knative/service.yaml">service.yaml</a></div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">apiVersion</span>: <span class="string"><span class="content">serving.knative.dev/v1alpha1</span></span>
 <span class="key">kind</span>: <span class="string"><span class="content">Service</span></span>
@@ -611,9 +612,9 @@ cronjob-event-greeter-cronjob-source-4v9vq-6bff96b58f-tgrhj   2/2       Running 
 <div class="paragraph">
 <p>Run the following commands to create the service:</p>
 </div>
-<div id="deploy-sink-service-oc-kn-resources-apply" class="listingblock">
+<div id="run-oc-sink-service-revision" class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="bash">oc apply -n knative{number} -f <a href="https://github.com/opitzconsulting/oc-expertcamp-knative.git/src/main/knative/eventing/knative/service.yaml">service.yaml</a></code></pre>
+<pre class="CodeRay highlight"><code data-lang="bash">oc -n knative{number}  apply -f service.yaml</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -645,7 +646,7 @@ oc --namespace knative{number}  get services.serving.knative.dev event-helloworl
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-11-07 09:24:27 +0100
+Last updated 2019-11-07 10:33:12 +0100
 </div>
 </div>
 <style>
