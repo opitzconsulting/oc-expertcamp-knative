@@ -685,7 +685,7 @@ event-helloworld-v1-deployment-84d6fb6f68-mjtbr                   2/2     Runnin
         <span class="key">sidecar.istio.io/inject</span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">false</span><span class="delimiter">&quot;</span></span>
     <span class="key">spec</span>:
       <span class="key">containers</span>:
-      - <span class="string"><span class="content">image: quay.io/rhdevelopers/knative-tutorial-greeter:quarkus</span></span>
+      - <span class="string"><span class="content">image: image-registry.openshift-image-registry.svc:5000/knative01/meetup-greeting:1</span></span>
         <span class="key">livenessProbe</span>:
           <span class="key">httpGet</span>:
             <span class="key">path</span>: <span class="string"><span class="content">/healthz</span></span>
